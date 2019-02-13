@@ -1,11 +1,5 @@
 # Kubernetes and Vault
 
-https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/
-
-```shell
-minikube start
-```
-
 ## Vault
 
 ### Configuration
@@ -98,4 +92,20 @@ Create one `demo_secret` secret for `app1` & `app2` in `secret/my_big_company/ku
 dvault kv put secret/my_big_company/not_kubernetes/demo_secret value=not_kubernetes_secret
 dvault kv put secret/my_big_company/kubernetes/app1/demo_secret value=app1_secret
 dvault kv put secret/my_big_company/kubernetes/app2/demo_secret value=app2_secret
+```
+
+## Kubernetes
+
+```shell
+minikube start
+```
+
+### Operator
+
+**TODO**
+
+Create a namespace `demo`:
+
+```shell
+kubectl create -f kubernetes/namespace-demo.yml
 ```
