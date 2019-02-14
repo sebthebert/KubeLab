@@ -42,6 +42,8 @@ Create `kube_admin` role:
 (values set for debugging, for better values read the [doc](https://www.vaultproject.io/api/auth/approle/index.html#parameters))
 
 ```shell
+dvault login
+
 dvault write auth/approle/role/kube_admin \
     secret_id_ttl=12h \
     token_num_uses=0 \
@@ -57,6 +59,8 @@ export kube_admin_secret_id=$( dvault write -f auth/approle/role/kube_admin/secr
 Create `kube_read` role:
 
 ```shell
+dvault login
+
 dvault write auth/approle/role/kube_read \
     secret_id_ttl=12h \
     token_num_uses=0 \
